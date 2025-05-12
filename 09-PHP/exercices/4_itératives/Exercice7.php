@@ -9,13 +9,8 @@ $number = (int)readline("Entrez un nombre : ");
 
 for ($i = 0; $i<= $number; $i++){
     // Si le nombre est un multiple de 3 ou de 5, affichez-le. 
-if($i%3 === 0 ){
-    echo " $i est un multiple de 3.", PHP_EOL;
+if($i%3 === 0 || $i%5 === 0 ){
+    echo " $i est un multiple de 3 ou 5.", PHP_EOL;
 }
-else if($i%5 === 0){
-    echo " $i est un multiple de 5.", PHP_EOL; 
-}
-else{
-echo PHP_EOL;
-};
+;
 };
