@@ -16,12 +16,14 @@ function doublerValeur (int...$entiers) : void {
     // Utilisez cette fonction anonyme pour doubler chaque valeur contenue dans le tableau passé en argument.
 
     foreach ($entiers as $entier){
-$resultat =$doublage($entier);
+        $resultat =$doublage($entier);
 
-      $doubleArray= $resultat ;  
+      $doubleArray[] = $resultat ;  
     };
 
-    echo $doubleArray;
+    echo"Tableau doublé : ", PHP_EOL;
+    foreach ($doubleArray as $double){
+    echo $double, PHP_EOL;};
 };
 
 
