@@ -7,6 +7,7 @@ $userLastname = readline("Entrez votre nom : ");
 $userFirstname = readline("Entrez votre prénom : ");
 $userAge = readline("Entrez votre âge : ");
 $userStatut = readline ("Etes-vous étudiant ? ");
+
 // Créez un tableau associatif contenant ces informations.
 
 $dataArray = [
