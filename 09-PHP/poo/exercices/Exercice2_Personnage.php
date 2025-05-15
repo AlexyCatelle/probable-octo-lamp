@@ -4,7 +4,6 @@
 
 // **Exercice :** Créer une classe `Personnage` avec :
 
-
 // - les getters et setters nécessaires. 
 // - un destructeur qui affichera la fuite du personnage.
 
@@ -22,18 +21,35 @@ $this->attack = $attack;
 
 // - une méthodes `attack()` qui prendra un `Personnage` en paramètre.
 
-public static function attack(string $personnage):void{
+public function attack(Personnage $adversaire):void{
 
 // La méthode `attack()` aura pour fonction : 
 // - diminuer les points de vie de l'adversaire passé en paramètre par le montant de l'attribut `attack`. 
+
+    
+$adversaire->health -= $this->attack;
+
+if ($adversaire->health < 0) {
+    $adversaire->health = 0;
+};
+
 // - Afficher les nom de l'attaquant et de l'adversaire. 
 // - Indiquer le montant de vie restant de l'adversaire.
-    echo("test attack $personnage"),PHP_EOL;
+echo "{$this->name} attaque {$adversaire->name} !", PHP_EOL;
+        echo "Il reste {$adversaire->health} points de vie à {$adversaire->name}.", PHP_EOL;
+
 }
 
 // - une méthode `isAlive()` qui renverra un booléen pour indiquer si le personnage est encore en vie (HP >  0).
 
 public static function isAlive():void{
+
+
+
+
+
+
+
 
     echo("test is alive"),PHP_EOL;
 
@@ -41,8 +57,9 @@ public static function isAlive():void{
 
 };
 
-$test = new Personnage("test 1",10,23);
-echo $test->attack("Cible");
+$test = new Personnage("test 1",100,23);
+$test2 = new Personnage("testy",140,32);
+echo $test->attack($test2);
 echo $test->isAlive();
 
 // Créer ensuite un objet `p1` et `p2` à partir de cette classe, définir leurs propriétés, et dans une boucle appeler leur méthodes `attack()` et `isAlive()`. Tant que l'un des 2 personnages est toujours en état de combattre, continuer le combat jusqu'à obtention d'un vainqueur. (l'autre sera détruit par son destructeur). 
