@@ -42,18 +42,11 @@ echo "{$this->name} attaque {$adversaire->name} !", PHP_EOL;
 
 // - une méthode `isAlive()` qui renverra un booléen pour indiquer si le personnage est encore en vie (HP >  0).
 
-public static function isAlive():void{
 
-
-
-
-
-
-
-
-    echo("test is alive"),PHP_EOL;
-
-}
+    public function isAlive(): bool
+    {
+        return $this->health > 0;
+    }
 
 };
 
