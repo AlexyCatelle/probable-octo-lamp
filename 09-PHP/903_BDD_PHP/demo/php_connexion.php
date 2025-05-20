@@ -5,7 +5,7 @@ $db = null;
 
 try {
     $db = new PDO("mysql:host=localhost;", "root", "$DB_PASSWORD");
-    echo "La connexion est établie !";
+    echo "La connexion est établie !", PHP_EOL;
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
     exit;
