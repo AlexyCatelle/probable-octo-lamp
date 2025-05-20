@@ -1,0 +1,81 @@
+html {
+    /* 1rem = 10px */
+    font-size: 62.5%;
+  }
+  body {
+    font-size: 1.6rem;
+  }
+
+.calculatrice{
+    width: 20rem;
+    height: 30rem;
+    background-color:black;
+}
+
+.calculatrice__resultat{
+    display: flex;
+    height: 30%;
+    justify-content: flex-end;
+    align-items: stretch;
+    font-size: 4rem;
+    padding-right: 0.5rem;   
+}
+
+.calculatrice__resultat p{
+    color: white;
+}
+
+button{
+    width: 3.5rem;
+    height:3.5rem;
+    border-radius: 50%;
+    border:none;
+    font-size:1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    }
+
+.calculatrice__buttons{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: space-evenly
+}
+
+.calculatrice__buttons div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+
+.calculatrice__buttons div button:last-child {
+    background-color: orange;
+    color: white;
+
+}
+
+.calculatrice__buttons div:first-child button:first-child,
+.calculatrice__buttons div:first-child button:nth-child(2),
+.calculatrice__buttons div:first-child button:nth-child(3) {
+    background-color: rgb(179, 175, 175);
+    color: black;
+    font-weight: bold;
+}
+
+/* .calculatrice__buttons div:last-child button:first-child{
+    width: calc(3.5rem * 2 + 1.7rem);
+    border-radius: 3.5rem;
+} */
+
+
+.calculatrice__buttons div:last-child button:first-child {
+    flex-grow: 0.5; 
+    border-radius: 3.5rem;
+    padding-left: 1.5rem;
+    justify-content: flex-start;
+
+}
+

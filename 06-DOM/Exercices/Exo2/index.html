@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Réservation de Rendez-vous</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Formulaire de Réservation</h1>
+
+  <form id="bookingForm">
+    <label>Nom du client :
+      <input type="text" id="name" required>
+      <span class="error" id="nameError"></span>
+    </label>
+
+    <label>Date du rendez-vous :
+      <input type="date" id="date" required>
+      <span class="error" id="dateError"></span>
+    </label>
+
+    <label>Heure du rendez-vous :
+      <input type="time" id="time" required>
+      <span class="error" id="timeError"></span>
+    </label>
+
+    <label>Nombre de participants :
+      <input type="number" id="participants" min="0" max="10" required>
+      <span class="error" id="participantsError"></span>
+    </label>
+
+    <button type="submit">Réserver</button>
+  </form>
+
+  <h2>Rendez-vous Réservés</h2>
+  <table id="reservationsTable">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Participants</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
