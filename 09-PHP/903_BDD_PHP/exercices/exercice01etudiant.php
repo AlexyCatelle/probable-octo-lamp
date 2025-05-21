@@ -90,15 +90,15 @@ class Etudiant
 class EtudiantRepository
 {
   public function __construct(private PDO $db) {}
-  // 1. Créer une function qui permet d'afficher tous les étudiants
 
+  // 1. Créer une function qui permet d'afficher tous les étudiants
   public function readAllEtudiants(): array
   {
     $stmt = $this->db->query("SELECT * FROM etudiants");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
-  // 2. Créer une function qui permet d'ajouter un étudiant
 
+  // 2. Créer une function qui permet d'ajouter un étudiant
   public function addOneEtudiant(Etudiant $etudiant): void
   {
     $stmt = $this->db->prepare(
@@ -115,7 +115,6 @@ class EtudiantRepository
   }
 
   // 3. Créer une function qui permet d'éditer un étudiant
-
   public function updateEtudiant(Etudiant $etudiant): bool
   {
     if ($etudiant->id === null) {
@@ -133,7 +132,6 @@ class EtudiantRepository
   }
 
   // 4. Créer une function qui permet de supprimer un étudiant
-
   public function deleteEtudiant(int $id): bool
   {
     $stmt = $this->db->prepare("DELETE FROM etudiants WHERE id = ?");
