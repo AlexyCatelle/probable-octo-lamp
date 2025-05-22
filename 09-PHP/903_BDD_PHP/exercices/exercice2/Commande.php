@@ -51,4 +51,21 @@ class CommandeRepository
             $commande->getTotal()
         ]);
     }
+
+    public function editCommande(Commande $commande): bool
+    {
+        $stmt = $this->db->prepare("UPDATE commande SET ClientId = ?, Date = ?, Total = ? WHERE id = ?");
+        return $stmt->execute([
+            $commande->getClientId(),
+            $commande->getDate(),
+            $commande->getTotal(),
+            $commande->id
+        ]);
+    }
+
+    public function deleteCommande(int $id): bool
+    {
+        $stmt = $this->db->prepare("DELETE FROM commande WHERE id = ?");
+        return $stmt->execute([$id]);
+    }
 }
