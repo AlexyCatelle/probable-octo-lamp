@@ -1,0 +1,42 @@
+use DBexercice4
+
+db.createCollection("employees",
+{
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: [
+                "name"
+            ],
+            additionalProperties: false,
+            properties: {
+
+        _id: {},
+        name: {
+                    bsonType: "string"
+                },
+                age: {
+                    bsonType: "int",
+                    minimum: 18
+                },
+                department: {
+                    bsonType: "string"
+                }
+            }
+        }
+    },
+      validationLevel: "strict",
+  validationAction: "error"
+}
+)
+
+// TESTS START
+//Données valides
+db.employees.insertOne({ name: "Alice", age: 25, department: "RH"
+})
+db.employees.insertOne({ name: "Bob", age: 30, department: "IT"
+})
+    //Données non-valides
+db.employees.insertOne({ name: "Charlie", age: 17
+})
+// TESTS END
